@@ -4,13 +4,15 @@ import { addtask } from "../JS/actions/actions";
 
 export const Addtask = () => {
   const dispatch = useDispatch();
-  const [newtask, setnewtask] = useState({ imgurl: "", name: "" });
+  const [newtask, setnewtask] = useState("");
+  const [newtaskurl, setnewtaskurl] = useState("");
   const handelechange = () => { 
     console.log("button")
-    dispatch(addtask(newtask));
-    setnewtask({ imgurl: "", name: "" });
+    dispatch(addtask(newtask,newtaskurl));
+    setnewtask("");
+    setnewtaskurl("")
   };
-
+console.log(newtaskurl)
   return (
     <div>
       <input
@@ -18,14 +20,14 @@ export const Addtask = () => {
         type="usl"
         name="img"
         placeholder="put the img url"
-        onChange={(e) => setnewtask({...newtask,imgurl:e.target.value})}
+        onChange={(e) => setnewtaskurl(e.target.value)}
       />
       <input
       value={newtask.name}
         type="text"
         name="descripion"
         placeholder="put the description"
-        onChange={(e) => setnewtask({...newtask,name:e.target.value})}
+        onChange={(e) => setnewtask(e.target.value)}
       />
       <button onClick={handelechange}>submit new task</button>
     </div>

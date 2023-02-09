@@ -1,23 +1,39 @@
 import { useState } from "react";
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
+import { filtertodo } from "../JS/actions/actions";
 
-export const Filtertask=()=>{
-  const status = useSelector((state) => state.status);
-  const [done, setDone] = useState(status);
-  const handeldone=(value)=>{setDone(value)}
-    
-    return(
+export const Filtertask = () => {
+  //const status = useSelector((state) => state.status);
+  //const [done, setDone] = useState(status);
 
-    
-    
-        <div>
-           <select>
-                <option value="" key="" onClick={"done"}>Done</option>
-                <option value="" key=""onClick={"undone"}>Undone</option>
-                <option value="" key=""onClick={"all"}>All</option>
-            </select>
+  const dispatch = useDispatch();
 
-            
-        </div>
-    )
-}
+  console.log(dispatch);
+  return (
+    <div>
+      <select>
+        <option
+          value="all"
+          onClick={(e) => dispatch(filtertodo(e.target.value))}
+          key=""
+        >
+          All
+        </option>
+        <option
+          value="done"
+          onClick={(e) => dispatch(filtertodo(e.target.value))}
+          key=""
+        >
+          Done
+        </option>
+        <option
+          value="undone"
+          onClick={(e) => dispatch(filtertodo(e.target.value))}
+          key=""
+        >
+          Undone
+        </option>
+      </select>
+    </div>
+  );
+};

@@ -2,7 +2,7 @@ export const task = [
   {
     id: 0,
     name: "make breakfast for the apes",
-    isdone: true,
+    isdone: false,
     imgurl:
       "https://images.csmonitor.com/csm/2015/06/911656_1_0603-ACHIMPS.jpg_standard.jpg?alias=standard_900x600",
   },
@@ -23,14 +23,14 @@ export const task = [
   {
     id: 3,
     name: "the apes angry",
-    isdone: true,
+    isdone: false,
     imgurl:
       "https://www.hollywoodreporter.com/wp-content/uploads/2014/05/apes_a.jpg",
   },
   {
     id: 4,
     name: "give the apes bananas",
-    isdone: true,
+    isdone: false,
     imgurl: "https://s2.dmcdn.net/v/DvMY91ZeQAaG8HKxG/x1080",
   },
   {

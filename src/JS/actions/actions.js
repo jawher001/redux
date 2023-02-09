@@ -1,9 +1,9 @@
-import { ADDTASK, EDITTODO, FILTERTASK } from "../actiontypes/actiontypes";
+import { ADDTASK, EDITTODO, FILTERTASK, SETCHECK } from "../actiontypes/actiontypes";
 
-export const addtask = (newtask) => {
+export const addtask = (name, imgurl) => {
   return {
     type: ADDTASK,
-    payloade: newtask,
+    payloade: {name,imgurl}
   };
 };
 export const filtertodo = (status) => {
@@ -12,9 +12,15 @@ export const filtertodo = (status) => {
     payload: status,
   };
 };
-export const edittodo = (id, title) => {
+export const edittodo = (id, name) => {
   return {
     type: EDITTODO,
-    payload: {id, title }
+    payload: {id, name }
   };
 };
+export const setcheck = (id, isdone) => {
+  return{
+    type: SETCHECK,
+    payload: {id, isdone}
+  }
+}
