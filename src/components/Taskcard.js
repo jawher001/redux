@@ -35,9 +35,9 @@ export  function Taskcard ({task}) {
   };
  
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{marginTop:"20px" }}>
       <CardActionArea>
-        <CardMedia
+        <CardMedia width="345"
           component="img"
           height="140"
           image={task.imgurl}
@@ -55,7 +55,7 @@ export  function Taskcard ({task}) {
         <Button onClick={handleEdit} size="small" color="primary">
           {text ? "save" : "edit"}
         </Button>
-        <input  type="checkbox" onClick={handleSetCheck}/>
+        <input  type="checkbox" onChange={handleSetCheck} checked={task.isdone}/>
       </CardActions>
     </Card>
   );

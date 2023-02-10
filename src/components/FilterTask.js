@@ -8,29 +8,16 @@ export const Filtertask = () => {
 
   const dispatch = useDispatch();
 
-  console.log(dispatch);
   return (
     <div>
-      <select>
-        <option
-          value="all"
-          onClick={(e) => dispatch(filtertodo(e.target.value))}
-          key=""
-        >
+      <select onChange={(e) => dispatch(filtertodo(e.target.value))}>
+        <option value="all" >
           All
         </option>
-        <option
-          value="done"
-          onClick={(e) => dispatch(filtertodo(e.target.value))}
-          key=""
-        >
+        <option value="done" >
           Done
         </option>
-        <option
-          value="undone"
-          onClick={(e) => dispatch(filtertodo(e.target.value))}
-          key=""
-        >
+        <option value="undone">
           Undone
         </option>
       </select>

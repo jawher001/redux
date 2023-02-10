@@ -1,5 +1,8 @@
 .App {
+  margin: auto;
   text-align: center;
+  background-image:url(https://m.media-amazon.com/images/I/81IqzBmvsJL._SL1500_.jpg) ;
+  background-size: cover;
 }
 
 .App-logo {
